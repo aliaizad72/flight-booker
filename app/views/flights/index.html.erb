@@ -9,4 +9,8 @@
   <%= form.submit "Search"%>
 <% end %>
 
-
+<ul>
+  <% @results.each do |result|%>
+    <li><%= result.datetime %></li>
+  <% end %>
+</ul>
