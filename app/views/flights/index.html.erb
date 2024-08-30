@@ -1,7 +1,7 @@
 <h1>Flight Booker</h1>
 <%= form_with url: flights_path, method: :get do |form| %>
   <%= form.label :departure_airport, "From: " %>
-  <%= form.select :departure_airport, @departure_airports %> <br><br>
+  <%= form.select :departure_airport, @airports %> <br><br>
   <%= form.label :arrival_airport, "To: " %>
-  <%= form.select :arrival_airport, @arrival_airports %> <br>
+  <%= form.select :arrival_airport, @airports %> <br>
 <% end %>
