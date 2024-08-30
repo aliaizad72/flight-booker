@@ -7,3 +7,31 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Airport.destroy_all
+
+Airport.create!(
+  [
+    { code: "AMS" },
+    { code: "ARN" },
+    { code: "ATL" },
+    { code: "BCN" },
+    { code: "BKK" },
+    { code: "BNE" },
+    { code: "BOM" },
+    { code: "BOS" },
+    { code: "CAN" },
+    { code: "CDG" },
+    { code: "CLT" },
+    { code: "DME" },
+    { code: "DEN" },
+    { code: "DFW" },
+    { code: "DUB" },
+    { code: "DUS" },
+    { code: "DXB" },
+    { code: "EWR" },
+    { code: "FCO" },
+    { code: "FLL" }
+  ]
+)
+
+p "Created #{Airport.count} airports"
