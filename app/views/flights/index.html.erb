@@ -3,5 +3,10 @@
   <%= form.label :departure_airport, "From: " %>
   <%= form.select :departure_airport, @airports %> <br><br>
   <%= form.label :arrival_airport, "To: " %>
-  <%= form.select :arrival_airport, @airports %> <br>
+  <%= form.select :arrival_airport, @airports %> <br><br>
+  <%= form.label :date, "Date: " %>
+  <%= form.select :date, @dates %> <br><br>
+  <%= form.submit "Search"%>
 <% end %>
+
+
