@@ -44,7 +44,30 @@ Flight.create!(
     { departure_id: 5, arrival_id: 1, datetime: "2024-07-01T03:55:30.123456Z", duration: 500 },
     { departure_id: 5, arrival_id: 2, datetime: "2024-06-18T04:10:30.122335Z", duration: 620 },
     { departure_id: 5, arrival_id: 3, datetime: "2024-05-30T08:45:00.000000Z", duration: 740 },
-    { departure_id: 5, arrival_id: 4, datetime: "2024-04-22T09:20:15.654321Z", duration: 450 }
+    { departure_id: 5, arrival_id: 4, datetime: "2024-04-22T09:20:15.654321Z", duration: 450 },
+    { departure_id: 1, arrival_id: 2, datetime: "2024-12-19T14:30:00.000000Z", duration: 285 },
+    { departure_id: 1, arrival_id: 2, datetime: "2024-12-19T16:45:15.123456Z", duration: 300 },
+
+    { departure_id: 1, arrival_id: 3, datetime: "2024-11-22T07:00:00.000000Z", duration: 395 },
+    { departure_id: 1, arrival_id: 3, datetime: "2024-11-22T10:15:25.234567Z", duration: 415 },
+
+    { departure_id: 1, arrival_id: 4, datetime: "2024-10-10T19:00:00.000000Z", duration: 525 },
+    { departure_id: 1, arrival_id: 4, datetime: "2024-10-10T21:45:40.987654Z", duration: 545 },
+
+    { departure_id: 1, arrival_id: 5, datetime: "2024-09-03T10:30:00.000000Z", duration: 655 },
+    { departure_id: 1, arrival_id: 5, datetime: "2024-09-03T12:50:55.876543Z", duration: 675 },
+
+    { departure_id: 2, arrival_id: 1, datetime: "2024-07-21T15:10:00.000000Z", duration: 515 },
+    { departure_id: 2, arrival_id: 1, datetime: "2024-07-21T17:25:45.112233Z", duration: 535 },
+
+    { departure_id: 2, arrival_id: 3, datetime: "2024-06-15T12:00:00.000000Z", duration: 640 },
+    { departure_id: 2, arrival_id: 3, datetime: "2024-06-15T14:30:20.445566Z", duration: 660 },
+
+    { departure_id: 2, arrival_id: 4, datetime: "2024-05-27T14:15:00.000000Z", duration: 765 },
+    { departure_id: 2, arrival_id: 4, datetime: "2024-05-27T16:50:35.223344Z", duration: 785 },
+
+    { departure_id: 2, arrival_id: 5, datetime: "2024-04-12T17:30:00.000000Z", duration: 470 },
+    { departure_id: 2, arrival_id: 5, datetime: "2024-04-12T19:40:50.334455Z", duration: 490 }
   ]
 )
 

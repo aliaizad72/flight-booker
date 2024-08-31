@@ -8,4 +8,5 @@ class Flight < ApplicationRecord
   scope :departing_from, ->(id) { where(departure_id: id) }
   scope :arriving_to, ->(id) { where(arrival_id: id) }
   scope :at_date, ->(date) { all.select { |flight| flight.datetime.to_date == date } }
+  scope :exact_match, ->(date, dep_id, arr_id) { departing_from(dep_id).arriving_to(arr_id).at_date(date) }
 end
