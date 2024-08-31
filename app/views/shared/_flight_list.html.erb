@@ -1,9 +1,16 @@
 <% if params.has_key?(key) %>
 
+
+
   <h4>Flights <%= verb %>: <%= params[key] %></h4>
   <ul>
     <% results.each do |result|%>
-      <li><%= result.datetime.strftime("%d-%m-%Y %I:%M %p") %></li>
+      <% if key == :departure_airport %>
+        <% city = result.arrival_airport.city %>
+      <% else %>
+        <% city = result.departure_airport.city %>
+      <% end %>
+      <li><%= verb == 'from' ? "To":"From" %> <%= city %> at <%= result.datetime.strftime("%d-%m-%Y %I:%M %p") %></li>
     <% end %>
   </ul>
 

@@ -13,11 +13,10 @@
 
 <% if @exact_matches.any? %>
   <h3>From <%= params[:departure_airport] %>, to <%= params[:arrival_airport] %>, on <%= @date.strftime("%d-%m-%Y") %>:</h3>
-  <ul>
-  <% @exact_matches.each do |flight| %>
-    <li><%= flight.datetime.strftime("%I:%M%p") %></li>
+  <%= form_with url: flights_path, method: :get do |form| %>
+    <%= form.collection_radio_buttons :booking, @exact_matches, :id, :date %><br><br>
+    <%= form.submit "Book Flight" %>
   <% end %>
-  </ul>
 <% else %>
   <% if params[:date] %>
   <h3>There are no exact flights that match your search, however these flights might be related to your search.</h3>
