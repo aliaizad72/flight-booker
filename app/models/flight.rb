@@ -4,4 +4,8 @@ class Flight < ApplicationRecord
 
   validates :datetime, presence: true
   validates :duration, presence: true
+
+  scope :departing_from, ->(id) { where(departure_id: id) }
+  scope :arriving_to, ->(id) { where(arrival_id: id) }
+  scope :at_date, ->(date) { all.select { |flight| flight.datetime.to_date == date } }
 end

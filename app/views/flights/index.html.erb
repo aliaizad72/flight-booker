@@ -6,11 +6,19 @@
   <%= form.select :arrival_airport, @airports %> <br><br>
   <%= form.label :date, "Date: " %>
   <%= form.select :date, @dates %> <br><br>
+  <%= form.label :tix_num, "Number of passengers: " %>
+  <%= form.select :tix_num, (1..4).to_a %> <br><br>
   <%= form.submit "Search"%>
 <% end %>
 
+<p><%= params %></p>
+
+<%= render "shared/flight_list", key: :departure_airport, results: @departure_results.order(datetime: :asc), verb: "from" %>
+<%= render "shared/flight_list", key: :arrival_airport, results: @arrival_results.order(datetime: :asc), verb: "to" %>
+
+<h4>Flights on: <%= params[:date] %></h4>
 <ul>
-  <% @results.each do |result|%>
-    <li><%= result.datetime %></li>
+  <% @date_results.each do |result|%>
+    <li>From: <%= result.departure_airport.city %>, to: <%= result.arrival_airport.city %> at <%= result.datetime.strftime("%I:%M%p") %></li>
   <% end %>
 </ul>

@@ -5,8 +5,11 @@ class FlightsController < ApplicationController
 
     @departure_id = Airport.find_by(city: params[:departure_airport])
     @arrival_id = Airport.find_by(city: params[:arrival_airport])
+    @date = params[:date].to_date
 
-    @results = Flight.where(departure_id: @departure_id, arrival_id: @arrival_id)
+    @departure_results = Flight.departing_from(@departure_id)
+    @arrival_results = Flight.arriving_to(@arrival_id)
+    @date_results = Flight.at_date(@date)
   end
 
   private

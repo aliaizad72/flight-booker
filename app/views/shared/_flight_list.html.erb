@@ -1,0 +1,10 @@
+<% if params.has_key?(key) %>
+
+  <h4>Flights <%= verb %>: <%= params[key] %></h4>
+  <ul>
+    <% results.each do |result|%>
+      <li><%= result.datetime.strftime("%d-%m-%Y %I:%M %p") %></li>
+    <% end %>
+  </ul>
+
+<% end %>
