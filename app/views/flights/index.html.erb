@@ -11,10 +11,13 @@
   <%= form.submit "Search"%>
 <% end %>
 
+<%= params %>
+
 <% if @exact_matches.any? %>
   <h3>From <%= params[:departure_airport] %>, to <%= params[:arrival_airport] %>, on <%= @date.strftime("%d-%m-%Y") %>:</h3>
   <%= form_with url: flights_path, method: :get do |form| %>
     <%= form.collection_radio_buttons :booking, @exact_matches, :id, :date %><br><br>
+    <%= form.hidden_field :tix_num, :value => params[:tix_num] %>
     <%= form.submit "Book Flight" %>
   <% end %>
 <% else %>

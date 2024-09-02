@@ -11,6 +11,6 @@ class Flight < ApplicationRecord
   scope :exact_matches, ->(date, dep_id, arr_id) { departing_from(dep_id).arriving_to(arr_id).at_date(date) }
 
   def date
-    "#{datetime.strftime("%I:%M%p")}"
+    "#{datetime.strftime("%I:%M %p")}"
   end
 end
