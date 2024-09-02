@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.readonly {
+    background-color: #e5e7eb;
+    outline: none;
+    border: transparent;
+}
