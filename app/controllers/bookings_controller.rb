@@ -16,6 +16,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.find_by(id: params[:id])
+    @flight = @booking.flight
+    @booking_passengers = BookingsPassenger.where(booking_id: @booking.id)
+  end
+
   private
 
   def bookings_param

@@ -1,0 +1,20 @@
+<h1>Booking for Flight <%= @flight.id %></h1>
+<h3>Booking ID: <%= @booking.id %></h3>
+<h3>Flight Details:</h3>
+<ul>
+  <li>From: <%= @flight.departure_airport.city %></li>
+  <li>To: <%= @flight.arrival_airport.city %></li>
+  <li>Date: <%= @flight.datetime.strftime("%d-%m-%Y") %></li>
+  <li>Time: <%= @flight.datetime.strftime("%I:%M %p UTC") %></li>
+</ul>
+
+<% @booking_passengers.each_with_index do |bp, n| %>
+  <h3><%= (n + 1).ordinalize %> Passenger Details:</h3>
+  <ul>
+    <li>First name: <%= bp.passenger.first_name %></li>
+    <li>Last name: <%= bp.passenger.last_name %></li>
+    <li>Email: <%= bp.passenger.email %></li>
+  </ul>
+<% end %>
+
+<h4>Booking confirmed!</h4>
