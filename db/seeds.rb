@@ -75,26 +75,26 @@ puts "Created #{Flight.count} flights"
 
 Passenger.create!(
   [
-#     { first_name: "John", last_name: "Doe", email: "johndoe@example.com" },
-# { first_name: "Jane", last_name: "Smith", email: "janesmith@example.com" },
-# { first_name: "Robert", last_name: "Brown", email: "robertbrown@example.com" },
-# { first_name: "Emily", last_name: "Davis", email: "emilydavis@example.com" },
-# { first_name: "Michael", last_name: "Wilson", email: "michaelwilson@example.com" },
-# { first_name: "Sarah", last_name: "Taylor", email: "sarahtaylor@example.com" },
-# { first_name: "David", last_name: "Clark", email: "davidclark@example.com" },
-# { first_name: "Laura", last_name: "Lopez", email: "lauralopez@example.com" },
-# { first_name: "James", last_name: "Garcia", email: "jamesgarcia@example.com" },
-# { first_name: "Sophia", last_name: "Martinez", email: "sophiamartinez@example.com" },
-# { first_name: "Daniel", last_name: "Hernandez", email: "danielhernandez@example.com" },
-# { first_name: "Olivia", last_name: "Moore", email: "oliviamoore@example.com" },
-# { first_name: "Matthew", last_name: "Jackson", email: "matthewjackson@example.com" },
-# { first_name: "Abigail", last_name: "Lee", email: "abigailee@example.com" },
-# { first_name: "Joshua", last_name: "Perez", email: "joshuaperez@example.com" },
-# { first_name: "Megan", last_name: "Thompson", email: "meganthompson@example.com" },
-# { first_name: "Andrew", last_name: "White", email: "andrewwhite@example.com" },
-# { first_name: "Elizabeth", last_name: "Harris", email: "elizabethharris@example.com" },
-# { first_name: "Christopher", last_name: "Young", email: "christopheryoung@example.com" },
-# { first_name: "Ashley", last_name: "King", email: "ashleyking@example.com" }
+    { first_name: "John", last_name: "Doe", email: "johndoe@example.com" },
+{ first_name: "Jane", last_name: "Smith", email: "janesmith@example.com" },
+{ first_name: "Robert", last_name: "Brown", email: "robertbrown@example.com" },
+{ first_name: "Emily", last_name: "Davis", email: "emilydavis@example.com" },
+{ first_name: "Michael", last_name: "Wilson", email: "michaelwilson@example.com" },
+{ first_name: "Sarah", last_name: "Taylor", email: "sarahtaylor@example.com" },
+{ first_name: "David", last_name: "Clark", email: "davidclark@example.com" },
+{ first_name: "Laura", last_name: "Lopez", email: "lauralopez@example.com" },
+{ first_name: "James", last_name: "Garcia", email: "jamesgarcia@example.com" },
+{ first_name: "Sophia", last_name: "Martinez", email: "sophiamartinez@example.com" },
+{ first_name: "Daniel", last_name: "Hernandez", email: "danielhernandez@example.com" },
+{ first_name: "Olivia", last_name: "Moore", email: "oliviamoore@example.com" },
+{ first_name: "Matthew", last_name: "Jackson", email: "matthewjackson@example.com" },
+{ first_name: "Abigail", last_name: "Lee", email: "abigailee@example.com" },
+{ first_name: "Joshua", last_name: "Perez", email: "joshuaperez@example.com" },
+{ first_name: "Megan", last_name: "Thompson", email: "meganthompson@example.com" },
+{ first_name: "Andrew", last_name: "White", email: "andrewwhite@example.com" },
+{ first_name: "Elizabeth", last_name: "Harris", email: "elizabethharris@example.com" },
+{ first_name: "Christopher", last_name: "Young", email: "christopheryoung@example.com" },
+{ first_name: "Ashley", last_name: "King", email: "ashleyking@example.com" }
   ]
 )
 
