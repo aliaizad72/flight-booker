@@ -1,5 +1,4 @@
 <h1>Booking for Flight <%= @flight.id %></h1>
-<%= @passengers %>
 <%= form_with model: @booking do |f| %>
   <%= f.label :flight_id, "Flight ID: " %>
   <%= f.text_field :flight_id, value: @flight.id, readonly: true, class: "readonly" %><br><br>
@@ -13,9 +12,9 @@
   <%= f.text_field :time, value: @flight.datetime.strftime("%I:%M %p UTC"), readonly: true, class: "readonly" %><br><br>
   <%= f.label :tix_num, "Number of passengers: " %>
   <%= f.text_field :tix_num, value: params[:tix_num], readonly: true, class: "readonly" %><br><br>
-  <% params[:tix_num].to_i.times do |n| %>
-    <h3><%= (n + 1).ordinalize %> Passenger Information</h3>
-    <%= f.fields_for @booking.build_passenger, index: @booking.passenger.id do |sub_form| %>
+<!--    <h3><%#= (n + 1).ordinalize %> Passenger Information</h3>-->
+    <%= f.fields_for :passengers do |sub_form| %>
+      <h3>Passenger Information</h3>
       <%= sub_form.label :first_name, "First Name: " %>
       <%= sub_form.text_field :first_name %><br><br>
       <%= sub_form.label :last_name, "Last Name: " %>
@@ -23,6 +22,5 @@
       <%= sub_form.label :email, "Email: " %>
       <%= sub_form.text_field :email %><br><br>
     <% end %>
-  <% end %>
   <%= f.submit "Book Flight" %>
 <% end %>

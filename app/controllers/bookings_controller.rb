@@ -1,28 +1,24 @@
 class BookingsController < ApplicationController
   def index
     @flight = Flight.find_by(id: params[:flight_id])
-    @booking = Booking.new
-    params[:tix_num].to_i.times { @booking.build_passenger }
+    @booking = @flight.bookings.new
+    params[:tix_num].to_i.times { @booking.passengers.build }
   end
 
   def create
-    @passengers = []
-    bookings_param[:passenger].each do |pass|
-      passenger = Passenger.create(pass)
-      @passengers << passenger
-    end
+    @flight = Flight.find_by(id: bookings_param[:flight_id])
+    @booking = @flight.bookings.build
+    @booking.passengers.build(bookings_param[:passengers_attributes].values)
 
-    @bookings = @passengers.map { |passenger| Booking.new(flight_id: bookings_param[:flight_id], passenger_id: passenger.id) }
-    if @bookings.all?(&:valid?)
-      @bookings.each { |booking| booking.save }
+    if @booking.save
+      redirect_to booking_path(@booking.id)
     else
-      render :index, status: 422
     end
   end
 
   private
 
   def bookings_param
-    params.require(:booking).permit(:flight_id, passenger: [ :first_name, :last_name, :email ])
+    params.require(:booking).permit(:flight_id, passengers_attributes: [ :first_name, :last_name, :email ])
   end
 end
