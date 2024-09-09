@@ -22,5 +22,9 @@
     <% flash.each do |t, msg| %>
       <p><%= msg %></p>
     <% end %>
+    <br>
+    <% unless request.fullpath == root_path %>
+      <%= link_to "Home", root_path %>
+    <% end %>
   </body>
 </html>

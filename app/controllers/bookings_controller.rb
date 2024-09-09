@@ -11,6 +11,9 @@ class BookingsController < ApplicationController
     @booking.passengers.build(bookings_param[:passengers_attributes].values)
 
     if @booking.save
+      @booking.passengers.each do |passenger|
+        PassengerMailer.with(passenger: passenger, booking: @booking).confirm_email.deliver_now!
+      end
       redirect_to booking_path(@booking.id)
     else
       flash[:alert] = "Fill in the forms properly!"

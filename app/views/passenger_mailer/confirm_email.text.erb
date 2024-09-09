@@ -1,0 +1,10 @@
+You have booked your flight, <%= @passenger.first_name %>!
+=================================================================
+
+Booking ID: <%= @booking.id %>
+Flight ID: <%= @booking.flight.id %>
+Departing from: <%= @booking.flight.departure_airport.city %>
+Arriving to: <%= @booking.flight.arrival_airport.city %>
+Date: <%= @booking.flight.datetime.strftime("%d-%m-%Y") %>
+Time: <%= @booking.flight.datetime.strftime("%I:%M %p UTC") %>
+Thank you for booking your flight with us. Safe travels!
