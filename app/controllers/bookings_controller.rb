@@ -13,6 +13,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking.id)
     else
+      flash[:alert] = "Fill in the forms properly!"
+      redirect_back fallback_location: bookings_path
     end
   end
 
